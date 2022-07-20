@@ -1,0 +1,52 @@
+<div>
+  
+  <fieldset>
+
+    <legend>My Students</legend>
+
+    <div class="row">
+      <div class="col-3">
+        <label for="disabledTextInput" class="form-label">Name</label>
+        <input class="form-control" placeholder="Name" #studentName>
+      </div>
+
+
+      <div class="col-3">
+        <label for="disabledTextInput" class="form-label">Last Name</label>
+        <input class="form-control" placeholder="Last Name" #studentLastName>
+      </div>
+
+      <div class="col-3">
+        <label for="disabledTextInput" class="form-label">GPA</label>
+        <input class="form-control" placeholder="GPA" #studentGpa>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-secondary"
+          (click)="add(studentName.value , studentLastName.value,studentGpa.value); studentName.value='' ;studentLastName.value='' ; studentGpa.value= '' ;">
+          add
+        </button>
+      </div>
+    </div>
+  </fieldset>
+
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let student of students">
+        <app-student [student]="student" (delete)="delete(student)"></app-student>
+      </li>
+    </ul>
+  </div>
+</div>

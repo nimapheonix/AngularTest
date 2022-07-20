@@ -1,0 +1,7 @@
+<a routerLink="/detail/{{student.id}}">
+    <span class="badge">{{student.id}}</span> {{student.name}} {{student.lastName}}
+</a>
+
+&nbsp;
+
+<button class="btn btn-secondary" (click)="onDeleteClick($event)">Delete</button>

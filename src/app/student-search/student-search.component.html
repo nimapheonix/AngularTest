@@ -1,0 +1,25 @@
+<div id="search-component">
+    <h4 class="text-secondary">Student Search</h4>
+  
+<div class="row">
+  <div class="col">
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control"  />
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item"  *ngFor="let student of students$ | async" >
+        <a routerLink="/detail/{{student.id}}">
+          {{student.name}}
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
+  

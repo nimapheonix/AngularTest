@@ -1,0 +1,31 @@
+<br>
+
+<div class="row">
+  <div class="col">
+    <h3>Top Students</h3>
+  </div>
+</div>
+
+
+<br>
+
+<div class="row">
+  <div class="col" *ngFor="let student of students">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{student.name}} <span class="text-secondary">{{student.lastName}}</span> </h5> 
+        <p class="card-text">Grade: {{student.gpa | grade}}</p>
+        <a href="#" class="btn btn-dark" routerLink="/detail/{{student.id}}">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col">
+    <app-student-search></app-student-search>
+  </div>
+</div>
+

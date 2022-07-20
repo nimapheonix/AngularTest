@@ -1,0 +1,59 @@
+<div>
+  <fieldset *ngIf="student">
+
+    <legend>{{ student.name | uppercase }} Details</legend>
+
+    <label for="">Id :{{student.id}} </label>
+
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Name</label>
+      <input class="form-control" [(ngModel)]="student.name" placeholder="Name">
+    </div>
+
+
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Last Name</label>
+      <input class="form-control" [(ngModel)]="student.lastName" placeholder="Last Name">
+    </div>
+
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">GPA</label>
+      <input class="form-control" [(ngModel)]="student.gpa" placeholder="GPA">
+    </div>
+
+
+    <button (click)="goBack()" class="btn btn-secondary">go back</button>
+    &nbsp;
+    <button (click)="save()" class="btn btn-primary">save</button>
+
+
+  </fieldset>
+</div>
+
+
+
+<!-- <div *ngIf="student">
+  <h2>{{ student.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{student.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="student.name" placeholder="Name" />
+    </label>
+  </div>
+
+  <div>
+    <label>last name:
+      <input [(ngModel)]="student.lastName" placeholder="LastName" />
+    </label>
+  </div>
+
+  <div>
+    <label>GPA:
+      <input [(ngModel)]="student.gpa" placeholder="GPA" />
+    </label>
+  </div>
+
+
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div> -->
